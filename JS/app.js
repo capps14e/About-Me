@@ -1,5 +1,7 @@
 'use strict';
 
+// quiz
+
 let userAnswer = prompt('Am I an animal lover? Please respond with yes or no!');
 
 let cleanUserAnswer = userAnswer.trim().toLowerCase();
@@ -44,9 +46,39 @@ let shredAnswer = prompt('Do I absolutely shred on guitar? Please respond with y
 
 let cleanshredAnswer = shredAnswer.trim().toLowerCase();
 
-if (cleanUserAnswer === 'yes' || cleanshredAnswer === 'y') {
+if (cleanshredAnswer === 'yes' || cleanshredAnswer === 'y') {
   alert('Correct!');
 } else {
   alert('False!');
 }
 
+// number guess game
+
+const correctNumber = 6;
+let guessAnswer = prompt('Guess a number between 1 and 10:');
+
+let cleanguessAnswer = guessAnswer.trim().toLowerCase();
+
+let guessCount = 0;
+
+let isCorrect = false;
+
+while (!isCorrect && !isNaN(cleanguessAnswer) && guessCount < 4) {
+  guessCount++;
+
+  if (cleanguessAnswer === correctNumber) {
+    isCorrect = true;
+  } else if (cleanguessAnswer < correctNumber) {
+    alert(`Your guess was too low. Guess again. ${guessCount} of 4 guesses remaining.`);
+  } else {
+    alert(`Your guess was too high. Guess again. ${guessCount} of 4 guesses remaining.`);
+  }
+
+  cleanguessAnswer = prompt('Guess a number between 1 and 10:');
+}
+
+if (isCorrect) {
+  alert(`Correct! You guessed the number in ${guessCount} guesses.`);
+} else {
+  alert(`You have exceeded the maximum number of guesses. The number was ${correctNumber}`);
+}
