@@ -1,5 +1,5 @@
 .fontColor {
-    color: #0066ff;
+    color: #000000;
   }
   
   body {
@@ -9,15 +9,15 @@
   }
   
   #firstH2 {
-    color: #e84d4d;
+    color: #000000;
   }
   
   #secondH2{
-    color: #ff5e00;
+    color: #000000;
   }
   
   #thirdH2{
-    color: #ec0c0c ;
+    color: #000000 ;
   }
   #font-size {
     font-size: 40px;
