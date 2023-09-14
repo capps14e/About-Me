@@ -1,9 +1,18 @@
-# About-Me
+# LAB - 4 
 
-Wow, you actually read it. 9/12/23
+## About Me
 
-Added work history. 9/12/23
+This website is all about me and all the Lab 04 Requirments. 
 
-Added quiz questions. 9/13/23
+### Author: Luke McCarthy(Driver) Tom(Nav) 
+* Added a readme for tom
 
-![Lighthouse Report](https://github.com/capps14e/About-Me/assets/143365157/d55788dd-e093-4834-8c8c-8f630c49cf46)
+### Links and Resources
+
+* [stackoverflow](https://stackoverflow.com/questions/41604263/how-do-i-display-local-image-in-markdown)
+* Followed along with the Demo so I had a lot of the code before I started.
+* Any Links you used as reference
+
+### Lighthouse Accessibility Report Score
+
+![Lighthouse](file:///C:/Users/lukem/Pictures/Screenshot%202023-09-12%20153335.png)
