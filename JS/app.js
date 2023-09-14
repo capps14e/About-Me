@@ -83,27 +83,27 @@ if (isCorrect) {
   alert(`You have exceeded the maximum number of guesses. The number was ${correctNumber}`);
 }
 
-// let usercorrect = false;
-// let bands = [];
-// let guesses = 0;
+let usercorrect = false;
+let bands = [];
+let guesses = 0;
 
-// while(guesses < 7){
-//    //ask a question
-//   let eighties = prompt().toLowerCase();
+while(guesses < 7){
+   //ask a question
+  let eighties = prompt().toLowerCase();
  
-//   //find the band in the array
-//   for(let i = 0; i < bands.length; i++){
-//   //input array[i which increments]
-//     if(eighties === bands [i]){
-//     //they got it right
-//     alert();
-//     guesses = 7;
-//     userCorrect = true;
-//     break;
-//    }
-//    if(guesses !== 7){
-//     alert();
-//    }
+  //find the band in the array
+  for(let i = 0; i < bands.length; i++){
+  //input array[i which increments]
+    if(eighties === bands [i]){
+    //they got it right
+    alert();
+    guesses = 7;
+    userCorrect = true;
+    break;
+   }
+   if(guesses !== 7){
+    alert();
+   }
    
 
 
