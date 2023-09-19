@@ -1,4 +1,5 @@
 'use strict';
+let correctAnswers = 0;
 
 // quiz
 
@@ -8,6 +9,7 @@ let cleanUserAnswer = userAnswer.trim().toLowerCase();
 
 if (cleanUserAnswer === 'yes' || cleanUserAnswer === 'y') {
   alert('Correct!');
+  correctAnswers++;
 } else {
   alert('False!');
 }
@@ -18,6 +20,7 @@ let cleanmilitaryAnswer = militaryAnswer.trim().toLowerCase();
 
 if (cleanmilitaryAnswer === 'yes' || cleanmilitaryAnswer === 'y') {
   alert('Correct!');
+  correctAnswers++;
 } else {
   alert('False!');
 }
@@ -28,6 +31,7 @@ let cleanPCAnswer = PCAnswer.trim().toLowerCase();
 
 if (cleanPCAnswer === 'no' || cleanPCAnswer === 'n') {
   alert('Correct!');
+  correctAnswers++;
 } else {
   alert('False!');
 }
@@ -38,6 +42,7 @@ let cleanPowderAnswer = PowderAnswer.trim().toLowerCase();
 
 if (cleanPCAnswer === 'yes' || cleanPowderAnswer === 'y') {
   alert('Correct!');
+  correctAnswers++;
 } else {
   alert('False!');
 }
@@ -48,6 +53,7 @@ let cleanshredAnswer = shredAnswer.trim().toLowerCase();
 
 if (cleanshredAnswer === 'yes' || cleanshredAnswer === 'y') {
   alert('Correct!');
+  correctAnswers++;
 } else {
   alert('False!');
 }
@@ -55,53 +61,63 @@ if (cleanshredAnswer === 'yes' || cleanshredAnswer === 'y') {
 // number guess game
 
 const correctNumber = 6;
-let guessAnswer = prompt('Guess a number between 1 and 10:');
-
-let cleanguessAnswer = guessAnswer.trim().toLowerCase();
-
 let guessCount = 0;
-
 let isCorrect = false;
 
-while (!isCorrect && !isNaN(cleanguessAnswer) && guessCount < 4) {
-  guessCount++;
+
+
+
+
+while (!isCorrect && guessCount < 4) {
+  let guessAnswer = prompt('Guess a number between 1 and 10:');
+
+  let cleanguessAnswer = parseInt(guessAnswer)
+
+  if (!isNaN(cleanguessAnswer))
+
+
+    guessCount++;
 
   if (cleanguessAnswer === correctNumber) {
     isCorrect = true;
   } else if (cleanguessAnswer < correctNumber) {
-    alert(`Your guess was too low. Guess again. ${guessCount} of 4 guesses remaining.`);
+    alert(`Your guess was too low. Guess again. ${4 - guessCount} of 4 guesses remaining.`);
   } else {
-    alert(`Your guess was too high. Guess again. ${guessCount} of 4 guesses remaining.`);
+    alert(`Your guess was too high. Guess again. ${4 - guessCount} of 4 guesses remaining.`);
   }
-
-  cleanguessAnswer = prompt('Guess a number between 1 and 10:');
 }
 
 if (isCorrect) {
   alert(`Correct! You guessed the number in ${guessCount} guesses.`);
+  correctAnswers++;
 } else {
   alert(`You have exceeded the maximum number of guesses. The number was ${correctNumber}`);
 }
 
-// let usercorrect = false;
-// let bands = [];
-// let guesses = 0;
+let userCorrect = false;
+let games = ['Final Fantasy VII', 'Elden Ring', 'Monster Hunter', 'Dark Souls', 'The Witcher III', 'Warhammer: Vermintide 2', 'World of Warcraft', 'Darktide', 'Baldurs Gate III', 'Red Dead Redemption 2'];
+let guesses = 0;
 
-// while(guesses < 7){
-//    //ask a question
-//   let eighties = prompt().toLowerCase();
- 
-//   //find the band in the array
-//   for(let i = 0; i < bands.length; i++){
-//   //input array[i which increments]
-//     if(eighties === bands [i]){
-//     //they got it right
-//     alert();
-//     guesses = 7;
-//     userCorrect = true;
-//     break;
-//    }
-//    if(guesses !== 7){
-//     alert();
-//    }
-//closes the while loop
+while (guesses < 7) {
+  //ask a question
+  let favorites = prompt('Guess one of my favorite games!').toLowerCase();
+
+  //find the band in the array
+  for (let i = 0; i < games.length; i++) {
+    //input array[i which increments]
+    if (favorites === games[i].toLowerCase()) {
+      //they got it right
+      alert('Correct!');
+      correctAnswers++;
+      guesses = 7;
+      userCorrect = true;
+
+      break;
+    }
+  }
+  if (!userCorrect && guesses < 7) {
+    alert('False!');
+  }
+  guesses++;
+}
+alert(`You got ${correctAnswers} out of 7 questions correct`);
